@@ -1,7 +1,7 @@
 ﻿# Sets the current directory
 
 $currentDirectory = (Get-Location).path.ToLower()
-$currentDirectory = $currentDirectory.Replace("c:\users\$env:username", $UserHomePathIcon)
+$currentDirectory = $currentDirectory.Replace("c:\users\$(($env:username).ToLower())", $UserHomePathIcon)
 $global:promptCount = $promptCount + $currentDirectory.Length
 
 # Write start decorator
